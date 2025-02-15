@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+@layer components {
+  .wda-btn-primary {
+    @apply wda-px-4 wda-py-2 wda-bg-primary-600 wda-text-white wda-rounded-lg wda-font-medium
+    wda-shadow-sm hover:wda-bg-primary-700 focus:wda-outline-none focus:wda-ring-2
+    focus:wda-ring-primary-500 focus:wda-ring-offset-2 disabled:wda-opacity-50
+    disabled:wda-cursor-not-allowed wda-transition-colors;
+  }
+
+  .wda-btn-secondary {
+    @apply wda-px-4 wda-py-2 wda-bg-white wda-text-gray-700 wda-border wda-border-gray-300
+    wda-rounded-lg wda-font-medium wda-shadow-sm hover:wda-bg-gray-50 focus:wda-outline-none
+    focus:wda-ring-2 focus:wda-ring-primary-500 focus:wda-ring-offset-2
+    disabled:wda-opacity-50 disabled:wda-cursor-not-allowed wda-transition-colors;
+  }
+
+  .wda-card {
+    @apply wda-bg-white wda-rounded-lg wda-shadow-sm wda-border wda-border-gray-200;
+  }
+
+  .wda-input {
+    @apply wda-block wda-w-full wda-rounded-lg wda-border-gray-300 wda-shadow-sm
+    focus:wda-border-primary-500 focus:wda-ring-primary-500 disabled:wda-bg-gray-50
+    disabled:wda-text-gray-500 disabled:wda-cursor-not-allowed;
+  }
+
+  .wda-select {
+    @apply wda-block wda-w-full wda-rounded-lg wda-border-gray-300 wda-shadow-sm
+    focus:wda-border-primary-500 focus:wda-ring-primary-500 disabled:wda-bg-gray-50
+    disabled:wda-text-gray-500 disabled:wda-cursor-not-allowed;
+  }
+
+  .wda-tab {
+    @apply wda-px-4 wda-py-2 wda-text-sm wda-font-medium wda-text-gray-500
+    hover:wda-text-gray-700 hover:wda-bg-gray-50 wda-rounded-lg focus:wda-outline-none
+    focus:wda-ring-2 focus:wda-ring-primary-500 focus:wda-ring-offset-2;
+  }
+
+  .wda-tab-active {
+    @apply wda-bg-primary-50 wda-text-primary-700;
+  }
+}

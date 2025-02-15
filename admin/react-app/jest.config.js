@@ -1,0 +1,55 @@
+module.exports = {
+  roots: ['<rootDir>/src'],
+  collectCoverageFrom: [
+    'src/**/*.{js,jsx}',
+    '!src/**/*.d.ts',
+    '!src/index.js',
+    '!src/serviceWorker.js',
+    '!src/reportWebVitals.js',
+    '!src/**/*.stories.{js,jsx}',
+    '!src/test/**/*',
+  ],
+  setupFiles: ['<rootDir>/config/jest/setupTests.js'],
+  setupFilesAfterEnv: ['<rootDir>/src/setupTests.js'],
+  testMatch: [
+    '<rootDir>/src/**/__tests__/**/*.{js,jsx}',
+    '<rootDir>/src/**/*.{spec,test}.{js,jsx}',
+  ],
+  testEnvironment: 'jsdom',
+  transform: {
+    '^.+\\.(js|jsx)$': '<rootDir>/node_modules/babel-jest',
+    '^.+\\.css$': '<rootDir>/config/jest/cssTransform.js',
+    '^(?!.*\\.(js|jsx|css|json)$)': '<rootDir>/config/jest/fileTransform.js',
+  },
+  transformIgnorePatterns: [
+    '[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$',
+    '^.+\\.module\\.(css|sass|scss)$',
+  ],
+  modulePaths: ['<rootDir>/src'],
+  moduleNameMapper: {
+    '^@/(.*)$': '<rootDir>/src/$1',
+    '^@components/(.*)$': '<rootDir>/src/components/$1',
+    '^@pages/(.*)$': '<rootDir>/src/pages/$1',
+    '^@services/(.*)$': '<rootDir>/src/services/$1',
+    '^@context/(.*)$': '<rootDir>/src/context/$1',
+    '^@config/(.*)$': '<rootDir>/src/config/$1',
+    '^@utils/(.*)$': '<rootDir>/src/utils/$1',
+    '^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy',
+    '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
+    '\\.(jpg|jpeg|png|gif|webp|svg)$': '<rootDir>/config/jest/fileMock.js',
+  },
+  moduleFileExtensions: ['js', 'jsx', 'json'],
+  watchPlugins: [
+    'jest-watch-typeahead/filename',
+    'jest-watch-typeahead/testname',
+  ],
+  resetMocks: true,
+  globals: {
+    wp: {},
+    wdAppointments: {
+      apiUrl: 'http://localhost/wp-json/wd-appointments/v1',
+      nonce: 'test-nonce',
+      settings: {},
+    },
+  },
+};
